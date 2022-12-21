@@ -1,5 +1,12 @@
 const express = require("express");
 const app = express();
+app.get("/test", (req, res) => {
+  if (Math.random() > 0.5) {
+    res.send("ok");
+  } else {
+    res.status(500).send("fail");
+  }
+});
 
 app.get("/", (req, res) => res.send("Hello World"));
 
